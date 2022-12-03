@@ -4,7 +4,7 @@ import com.tomff.aoc.days._
 
 val solvedDays = Vector(Day2)
 @main
-def main(): Unit = {
+def main(): Unit =
   println(
     solvedDays.map {
       day =>
@@ -12,4 +12,3 @@ def main(): Unit = {
            |Result: ${day.run().getOrElse("Failed")}""".stripMargin
     }.mkString("\n")
   )
-}
