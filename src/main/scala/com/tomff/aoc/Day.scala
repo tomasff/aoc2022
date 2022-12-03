@@ -6,10 +6,10 @@ import scala.util.{Try, Using}
 trait Day(val num: Int) {
   private val inputPath: String = s"input/$num"
 
-  def solve(input: Iterator[String]): (Int, Int)
+  def solve(input: Seq[String]): (Int, Int)
 
   def run(): Try[(Int, Int)] =
     Using(Source.fromResource(inputPath)) {
-      reader => solve(reader.getLines())
+      reader => solve(reader.getLines().toSeq)
     }
 }

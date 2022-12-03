@@ -38,7 +38,7 @@ object Day2 extends Day(2) {
       case "Z" => 6 + scoreForPlay(winningPlay(opponent))
     }
 
-  override def solve(input: Iterator[String]): (Int, Int) =
+  override def solve(input: Seq[String]): (Int, Int) =
     input.map {
       round => round.split(" ").take(2)
     }.map {
