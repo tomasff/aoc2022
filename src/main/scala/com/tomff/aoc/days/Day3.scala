@@ -19,7 +19,7 @@ object Day3 extends Day(3) {
 
   private def findSumElfGroupPriorities(input: Seq[String]): Int =
     input.grouped(3).map {
-      elfGroup => itemPriority(elfGroup.reduce((x, y) => x intersect y).head)
+      elfGroup => itemPriority(elfGroup.reduce(_ intersect _).head)
     }.sum
 
   override def solve(input: Seq[String]): (Int, Int) =
