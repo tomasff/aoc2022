@@ -17,11 +17,6 @@ object Day2 extends Day(2) {
       case (_, _) => 0
     }
 
-  private def calculateRoundScore(round: String): Int =
-    round.split(" ") match {
-      case Array(opponent, us) => scoreForPlay(us) + scoreForHead2Head(opponent, us)
-    }
-
   private def winningPlay(play: String): String =
     play match {
       case "A" => "Y"
@@ -43,14 +38,14 @@ object Day2 extends Day(2) {
       case "Z" => 6 + scoreForPlay(winningPlay(opponent))
     }
 
-  private def calculateRoundScoreForOutcomes(round: String): Int =
-   round.split(" ") match {
-     case Array(opponent, outcome) => scoreForOutcome(opponent, outcome)
-   }
-
   override def solve(input: Iterator[String]): (Int, Int) =
     input.map {
-      round => (calculateRoundScore(round), calculateRoundScoreForOutcomes(round))
+      round => round.split(" ").take(2)
+    }.map {
+      case Array(opponent: String, us: String) => (
+        scoreForPlay(us) + scoreForHead2Head(opponent, us),
+        scoreForOutcome(opponent, us)
+      )
     }.reduce {
       (x, y) => (x._1 + y._1, x._2 + y._2)
     }
