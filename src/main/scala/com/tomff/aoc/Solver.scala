@@ -3,6 +3,7 @@ package com.tomff.aoc
 import com.tomff.aoc.days._
 
 val solvedDays = Vector(Day2, Day3)
+
 @main
 def main(): Unit =
   println(
