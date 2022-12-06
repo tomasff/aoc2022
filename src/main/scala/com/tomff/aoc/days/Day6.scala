@@ -8,7 +8,6 @@ object Day6 extends Day(6) {
       p => p.distinct.length == p.length
     ) + markerLength
 
-  override def solve(input: Seq[String]): (Int, Int) = {
+  override def solve(input: Seq[String]): (Int, Int) =
     (findPacketMarkerStart(input.flatten, 4), findPacketMarkerStart(input.flatten, 14))
-  }
 }
