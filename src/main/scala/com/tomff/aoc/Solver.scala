@@ -2,7 +2,7 @@ package com.tomff.aoc
 
 import com.tomff.aoc.days._
 
-val solvedDays = Vector(Day2, Day3, Day6)
+val solvedDays = Vector(Day2, Day3, Day5, Day6)
 
 @main
 def main(): Unit =
